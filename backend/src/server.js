@@ -1,0 +1,2 @@
+require('dotenv').config();const http=require('http');const app=require('./app');const connectDB=require('./config/db');const attachSocket=require('./sockets');
+(async()=>{try{await connectDB();const server=http.createServer(app);const io=attachSocket(server);app.set('io',io);const port=process.env.PORT||5000;server.listen(port,()=>console.log(`ExamHub API running on ${port}`));}catch(e){console.error('Startup failed:',e.message);process.exit(1);}})();
