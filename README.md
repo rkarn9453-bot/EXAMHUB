@@ -1,30 +1,90 @@
-# ExamHub — Online Examination System
+ExamHub – Online Examination Management System
 
-A full-stack capstone starter built with React, Node.js, Express, MongoDB and Mongoose.
+ExamHub is a web-based online examination management system developed to simplify the process of creating, managing, and attempting online exams.
 
-## Features
-- Role-based accounts: admin, teacher and student
-- JWT access tokens, bcrypt password hashing and protected APIs
-- Exam and question CRUD; answer keys are not returned to students
-- Server-side exam start/submit flow and automatic objective grading
-- Result history and basic analytics aggregation
-- Centralized validation/errors, Helmet, CORS and rate limiting
-- Socket.IO exam-room updates and EventEmitter audit events
-- Seed script, Postman collection and project documentation
+Features
 
-## Requirements
-Node.js 20+, MongoDB Atlas/local MongoDB, npm.
+* User authentication and role-based access
+* Admin and Teacher exam management
+* Student exam participation
+* Create and manage multiple-choice questions (MCQs)
+* Automatic result calculation
+* Negative marking support
+* Exam analytics and performance tracking
+* MongoDB database integration
 
-## Run locally
-1. Copy `backend/.env.example` to `backend/.env` and fill in `MONGODB_URI` plus long random JWT secrets.
-2. In a terminal: `cd backend && npm install && npm run seed && npm run dev`.
-3. In another terminal: `cd frontend && npm install && npm run dev`.
-4. Open http://localhost:5173. API health: http://localhost:5000/api/v1/health
+Tech Stack
 
-Seed login (change after first login): `admin@examhub.test` / `ChangeMe123!`.
+Frontend
 
-## Deployment
-Deploy `backend` as a Render Node web service (build: `npm install`, start: `npm start`). Set environment variables from `.env.example`. Deploy `frontend` to Vercel with `VITE_API_URL` set to the deployed API URL. Configure backend `CLIENT_ORIGIN` to the Vercel URL. Never commit `.env`.
+* React.js
+* Vite
+* JavaScript
+* CSS
 
-## Important capstone note
-This is a working foundation, not proof of a completed deployment or evaluation. Configure your own Atlas database, rotate secrets, run tests, verify all rubric requirements, and be prepared to explain every module in your viva. See `docs/`.
+Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+
+Project Structure
+
+ExamHub/
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── backend/
+│   ├── src/
+│   ├── package.json
+│   └── .env.example
+│
+├── .gitignore
+└── README.md
+
+Installation and Setup
+
+1. Clone the Repository
+
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd ExamHub
+
+2. Setup Frontend
+
+cd frontend
+npm install
+npm run dev
+
+3. Setup Backend
+
+Open another terminal:
+
+cd backend
+npm install
+
+Configure your environment variables in a .env file using the variables required by the backend.
+
+Then run the backend using the development script configured in backend/package.json.
+
+User Roles
+
+* Admin: Manage exams and access analytics.
+* Teacher: Create and manage examinations.
+* Student: Attempt published exams and view results.
+
+Database
+
+MongoDB Atlas is used for storing user accounts, examinations, questions, and results.
+
+Project Status
+
+Developed as a BTech CSE (AI & ML) academic capstone project.
+
+Author
+
+Aman Karn
+BTech CSE – Artificial Intelligence & Machine Learning
